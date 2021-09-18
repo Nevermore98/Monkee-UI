@@ -1,5 +1,5 @@
 <template>
-  <button :class="`theme-${theme}`"
+  <button :class="`monkee-theme-${theme}`"
           class="monkee-button"
   >
     <slot/>
@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $button-height: 32px;
 $border-color: #d9d9d9;
 $font-color: #333;

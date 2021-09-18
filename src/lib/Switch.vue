@@ -1,6 +1,8 @@
 <template>
   <div>
-    <button :class="{checked:value}" @click="toggle">
+    <button class="monkee-switch"
+            :class="{'monkee-checked':value}"
+            @click="toggle">
       <span></span>
     </button>
   </div>
@@ -25,7 +27,7 @@ export default {
 $button-height: 26px;
 $circle-height: $button-height - 4px;
 
-button {
+.monkee-switch {
   position: relative;
   height: $button-height;
   width: $button-height*2;
@@ -44,7 +46,7 @@ button {
     transition: left 250ms;
   }
 
-  &.checked {
+  &.monkee-checked {
     background: #0066FF;
   }
 
@@ -58,14 +60,14 @@ button {
     }
   }
 
-  &.checked:active {
+  &.monkee-checked:active {
     > span {
       margin-left: -6px;
       width: $circle-height + 6px;
     }
   }
 
-  &.checked > span {
+  &.monkee-checked > span {
     left: calc(100% - #{$circle-height} - 2px);
   }
 }
