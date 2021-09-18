@@ -22,24 +22,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$buttonHeight: 26px;
-$circleHeight: $buttonHeight - 4px;
+$button-height: 26px;
+$circle-height: $button-height - 4px;
+
 button {
-  height: $buttonHeight;
-  width: $buttonHeight*2;
-  border: none;
-  background: #969696;
-  border-radius: $buttonHeight/2;
   position: relative;
+  height: $button-height;
+  width: $button-height*2;
+  background: #969696;
+  border: none;
+  border-radius: $button-height/2;
 
   > span {
     position: absolute;
     top: 2px;
     left: 2px;
-    height: $circleHeight;
-    width: $circleHeight;
+    height: $circle-height;
+    width: $circle-height;
     background: white;
-    border-radius: $circleHeight / 2;
+    border-radius: $circle-height / 2;
     transition: left 250ms;
   }
 
@@ -53,19 +54,19 @@ button {
 
   &:active {
     > span {
-      width: $circleHeight + 6px;
+      width: $circle-height + 6px;
     }
   }
 
   &.checked:active {
     > span {
-      width: $circleHeight + 6px;
       margin-left: -6px;
+      width: $circle-height + 6px;
     }
   }
 
   &.checked > span {
-    left: calc(100% - #{$circleHeight} - 2px);
+    left: calc(100% - #{$circle-height} - 2px);
   }
 }
 
