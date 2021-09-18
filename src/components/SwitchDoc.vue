@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Switch :value="y" @input="y = $event"/>
+    <Switch :value="isOpen" v-model:value="isOpen"/>
   </div>
 </template>
 <script lang="ts">
@@ -10,8 +10,8 @@ import {ref} from 'vue';
 export default {
   components: {Switch},
   setup(){
-    const y = ref(true)
-    return {y}
+    const isOpen = ref(false)
+    return {isOpen}
   }
 };
 
