@@ -1,21 +1,23 @@
 <template>
   <template v-if="visible">
-    <div class="monkee-dialog-mask" @click="onClickMask"></div>
-    <div class="monkee-dialog-wrapper">
-      <div class="monkee-dialog">
-        <header>
-          <slot name="title"/>
-          <span class="monkee-dialog-close" @click="close"></span>
-        </header>
-        <main>
-          <slot name="content"/>
-        </main>
-        <footer>
-          <Button type="info" @click="ok">确认</Button>
-          <Button @click="cancel">取消</Button>
-        </footer>
+    <Teleport to="body">
+      <div class="monkee-dialog-mask" @click="onClickMask"></div>
+      <div class="monkee-dialog-wrapper">
+        <div class="monkee-dialog">
+          <header>
+            <slot name="title"/>
+            <span class="monkee-dialog-close" @click="close"></span>
+          </header>
+          <main>
+            <slot name="content"/>
+          </main>
+          <footer>
+            <Button type="info" @click="ok">确认</Button>
+            <Button @click="cancel">取消</Button>
+          </footer>
+        </div>
       </div>
-    </div>
+    </Teleport>
   </template>
 </template>
 
@@ -103,7 +105,6 @@ $border-color: #d9d9d9;
     align-items: center;
     justify-content: space-between;
     font-size: 16px;
-    font-weight: bold;
   }
 
   > main {
