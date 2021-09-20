@@ -1,16 +1,19 @@
 <template>
   <template v-if="visible">
-    <div class="monkee-dialog-overlay"></div>
+    <div class="monkee-dialog-mask" @click="onClickMask"></div>
     <div class="monkee-dialog-wrapper">
       <div class="monkee-dialog">
-        <header>标题 <span class="monkee-dialog-close"></span></header>
+        <header>
+          标题
+          <span class="monkee-dialog-close" @click="close"></span>
+        </header>
         <main>
           <p>第一行字</p>
           <p>第二行字</p>
         </main>
         <footer>
-          <Button type="info">确认</Button>
-          <Button>取消</Button>
+          <Button type="info" @click="ok">确认</Button>
+          <Button @click="cancel">取消</Button>
         </footer>
       </div>
     </div>
@@ -25,9 +28,45 @@ export default {
     visible: {
       type: Boolean,
       default: false,
+    },
+    canClickMaskToClose: {
+      type: Boolean,
+      default: true
+    },
+    ok: {
+      type: Function
+    },
+    cancel: {
+      type: Function
     }
   },
-  components: {Button}
+  components: {Button},
+  setup(props, context) {
+    const close = () => {
+      context.emit('update:visible', false);
+    };
+
+    const onClickMask = () => {
+      if (props.canClickMaskToClose) {
+        close();
+      }
+    };
+
+    const ok = () => {
+      if (props.ok?.() !== false) {
+        close();
+      }
+    };
+
+    const cancel = () => {
+      context.emit('cancel');
+      close();
+    };
+
+    return {
+      close, onClickMask, ok, cancel
+    };
+  }
 };
 </script>
 
@@ -40,7 +79,7 @@ $border-color: #d9d9d9;
   min-width: 20em;
   max-width: 80%;
 
-  &-overlay {
+  &-mask {
     position: fixed;
     top: 0;
     left: 0;
