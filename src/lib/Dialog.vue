@@ -4,12 +4,11 @@
     <div class="monkee-dialog-wrapper">
       <div class="monkee-dialog">
         <header>
-          标题
+          <slot name="title"/>
           <span class="monkee-dialog-close" @click="close"></span>
         </header>
         <main>
-          <p>第一行字</p>
-          <p>第二行字</p>
+          <slot name="content"/>
         </main>
         <footer>
           <Button type="info" @click="ok">确认</Button>
@@ -27,7 +26,7 @@ export default {
   props: {
     visible: {
       type: Boolean,
-      default: false,
+      default: false
     },
     canClickMaskToClose: {
       type: Boolean,

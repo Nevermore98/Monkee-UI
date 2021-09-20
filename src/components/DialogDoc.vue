@@ -2,7 +2,19 @@
   <h2>Dialog 示例</h2>
   <h3>示例一</h3>
   <Button @click="toggle">toggle</Button>
-  <Dialog v-model:visible="x" :canClickMaskToClose="true" :ok="f1" :cancel="f2" ></Dialog>
+  <Dialog v-model:visible="x"
+          :canClickMaskToClose="true"
+          :ok="f1"
+          :cancel="f2"
+  >
+    <template v-slot:title>
+      <strong>加粗的标题</strong>
+    </template>
+    <template v-slot:content>
+      <div>这是弹出框的文本内容 第一行</div>
+      <div>这是弹出框的文本内容 第二行</div>
+    </template>
+  </Dialog>
 </template>
 
 <script lang="ts">
