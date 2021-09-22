@@ -87,7 +87,7 @@ $color: #007974;
 
 .features {
   margin: 64px auto;
-  width: 100%;
+  width: 320px;
   @media (min-width: 800px) {
     width: 800px;
   }
