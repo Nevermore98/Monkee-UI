@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 ul,
 ol {
@@ -11,8 +12,6 @@ a {
   text-decoration: none;
   color: inherit;
   &:hover {
-    border-bottom: 1px solid;
-    text-decoration: underline;
     cursor: pointer;
   }
 }
@@ -25,9 +24,13 @@ h6 {
   font-weight: normal;
 }
 body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   line-height: 1.5;
 
+  color: #333;
+  background: #F7F8FA;
   font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
   "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
   "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",
