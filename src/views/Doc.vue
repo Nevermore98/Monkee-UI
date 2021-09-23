@@ -83,6 +83,8 @@ aside {
       }
 
       .router-link-active {
+        color: #4fc08d;
+        font-weight: bold;
         background: #ebfff0;
         border-radius: 999px;
       }

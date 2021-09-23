@@ -3,7 +3,8 @@
     <div class="topnavAndBanner">
       <Topnav/>
       <div class="banner">
-        <h1>萌基UI</h1>
+        <h1>Monkee UI</h1>
+        <h2>萌奇 UI</h2>
         <h2>一个小小的 UI 框架</h2>
         <p class="actions">
           <a href="https://github.com/Nevermore98/monkee-ui">GitHub</a>
