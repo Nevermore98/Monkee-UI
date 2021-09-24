@@ -3,7 +3,7 @@
     <Topnav class="nav" toggleMenuButtonVisible/>
     <div class="content">
       <aside v-if="asideVisible">
-        <h2>开发指南</h2>
+        <h3>开发指南</h3>
         <ol>
           <li>
             <router-link to="/doc/intro">介绍</router-link>
@@ -16,7 +16,7 @@
           </li>
         </ol>
 
-        <h2>组件列表</h2>
+        <h3>组件列表</h3>
         <ol>
           <li>
             <router-link to="/doc/switch">Switch 开关</router-link>
@@ -75,6 +75,7 @@ aside {
       > a {
         display: block;
         padding: 8px 16px;
+        margin: 8px 0;
         text-decoration: none;
 
         &:hover {
@@ -120,7 +121,7 @@ aside {
 
   > main {
     flex-grow: 1;
-    padding: 16px;
+    padding: 0 16px 16px 16px;
     overflow: auto;
   }
 }

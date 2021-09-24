@@ -11,6 +11,10 @@ ol {
 a {
   text-decoration: none;
   color: inherit;
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  user-select: none;
   &:hover {
     cursor: pointer;
   }
@@ -23,6 +27,17 @@ h5,
 h6 {
   font-weight: normal;
 }
+
+h1 {
+  margin-bottom: 20px;
+}
+h2{
+  font-weight: 600;
+}
+h3{
+  font-weight: 600;
+  padding: 8px 0;
+}
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,7 +45,7 @@ body {
   line-height: 1.5;
 
   color: #333;
-  background: white;
+  background: #F7F8FA;
   font-family: -apple-system, "Noto Sans", "Helvetica Neue", Helvetica,
   "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB",
   "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN",

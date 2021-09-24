@@ -4,8 +4,9 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue'
-
+import {
+  ref
+} from 'vue'
 export default {
   props: {
     path: {

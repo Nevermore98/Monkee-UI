@@ -93,6 +93,11 @@ $disable-opacity: 0.5;
   cursor: pointer;
   box-shadow: 0 1px 0 fade-out(black, 0.95);
 
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  user-select: none;
+
   &:hover,
   &:focus {
     outline: none;
