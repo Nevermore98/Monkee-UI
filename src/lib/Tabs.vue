@@ -126,7 +126,7 @@ $radius: 4px;
   }
 
   &-content {
-    padding: 16px 16px;
+    padding: 12px;
     min-height: 150px;
     background-color: $background-color;
     border-bottom-left-radius: $radius;
