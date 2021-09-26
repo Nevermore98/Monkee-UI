@@ -4,6 +4,10 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+
+::-webkit-scrollbar {
+  display: none; /* Chrome Safari */
+}
 ul,
 ol {
   list-style: none;

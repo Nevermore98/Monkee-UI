@@ -5,11 +5,11 @@
       <component :is="component" />
     </div>
     <div class="card-actions">
-      <Button size="small">查看代码</Button>
+      <Button size="small" @click="toggleCode">查看代码</Button>
     </div>
-    <div class="card-code">
+    <div class="card-code" v-if="codeVisible">
         <pre class="language-html"
-             v-html="Prism.highlight(component.__sourceCode, Prism.languages.html, 'HTML')" />
+             v-html="html" />
     </div>
   </div>
 </template>
@@ -18,15 +18,21 @@
 import Button from '../lib/Button.vue'
 import 'prismjs';
 import 'prismjs/themes/prism-customXMY.css'
+import {computed, ref} from 'vue';
 const Prism = (window as any).Prism
 export default {
   components: {Button},
   props: {
     component: Object
   },
-  setup() {
+  setup(props) {
+    const codeVisible = ref(false)
+    const toggleCode = ()=> codeVisible.value = !codeVisible.value
+    const html = computed(() => {
+      return Prism.highlight(props.component.__sourceCode, Prism.languages.html, 'html')
+    })
     return {
-      Prism
+      Prism,codeVisible,toggleCode,html
     }
   }
 }
