@@ -123,6 +123,11 @@ aside {
     flex-grow: 1;
     padding: 0 16px 16px 16px;
     overflow: auto;
+
+    @media (max-width: 500px) {
+      padding: 0 12px 12px 12px;
+
+    }
   }
 }
 </style>

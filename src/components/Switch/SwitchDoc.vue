@@ -9,7 +9,7 @@
 <script lang="ts">
 import SwitchDemo1 from './SwitchDemo1.vue';
 import SwitchDemo2 from './SwitchDemo2.vue';
-import Demo from './Demo.vue';
+import Demo from '../Demo.vue';
 
 const Prism = (window as any).Prism;
 

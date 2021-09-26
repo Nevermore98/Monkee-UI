@@ -39,9 +39,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$green: rgba(183, 233, 230, 1);
+
 .topnav {
   display: flex;
-  padding: 16px;
+  padding: 8px;
   position: fixed;
   top: 0;
   left: 0;
@@ -49,6 +51,7 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  background-color: $green;
 
   > .logo {
     max-width: 6em;

@@ -56,14 +56,14 @@ $circle-height: $button-height - 4px;
 
   &:active {
     > span {
-      width: $circle-height + 6px;
+      width: $circle-height + 2px;
     }
   }
 
   &.monkee-checked:active {
     > span {
-      margin-left: -6px;
-      width: $circle-height + 6px;
+      margin-left: -2px;
+      width: $circle-height + 2px;
     }
   }
 

@@ -84,7 +84,6 @@ $disable-opacity: 0.5;
   align-items: center;
   height: $button-default-height;
   padding: 0 16px;
-  margin: 0 16px 16px 0;
   color: $font-color;
   background-color: white;
   border: 1px solid $border-color;

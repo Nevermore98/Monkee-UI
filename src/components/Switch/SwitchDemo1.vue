@@ -1,12 +1,13 @@
 <demo>
-支持 disabled
+常规用法
 </demo>
+
 <template>
-  <Switch v-model:value="isOpen" disabled />
+  <Switch v-model:value="isOpen" />
 </template>
 
 <script lang="ts">
-import Switch from '../lib/Switch.vue'
+import Switch from '../../lib/Switch.vue'
 import {
   ref
 } from 'vue'
