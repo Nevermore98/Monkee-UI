@@ -6,14 +6,13 @@
         <div class="monkee-dialog">
           <header>
             <slot name="title"/>
-            <span class="monkee-dialog-close" @click="close"></span>
           </header>
           <main>
             <slot name="content"/>
           </main>
           <footer>
-            <Button type="info" @click="ok">确认</Button>
-            <Button @click="cancel">取消</Button>
+            <Button size="large" class="hairline-top hairline-right" type="text" @click="cancel">取消</Button>
+            <Button size="large" class="hairline-top" type="text" @click="ok">确认</Button>
           </footer>
         </div>
       </div>
@@ -96,11 +95,11 @@ $border-color: #d9d9d9;
     top: 50%;
     transform: translate(-50%, -50%);
     z-index: 11;
+
   }
 
   > header {
     padding: 12px 16px;
-    border-bottom: 1px solid $border-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -112,36 +111,61 @@ $border-color: #d9d9d9;
   }
 
   > footer {
-    border-top: 1px solid $border-color;
-    padding: 12px 16px;
-    text-align: right;
+    display: flex;
+    justify-content: space-around;
+    .monkee-button::before {
+      border: none;
+    }
+
+    :nth-child(1){
+      border: none;
+      flex-grow: 1;
+      border-radius: 0 0 0 $radius;
+    }
+    :nth-child(2){
+      border: none;
+
+      flex-grow: 1;
+      color: orangered;
+      border-radius: 0 0 $radius 0;
+    }
+
+    .hairline-border {
+      padding: 1rem;
+      box-shadow: 0 0 0 1px #ebedf0;
+    }
+    //.monkee-button {
+    //  background-color: white;
+    //  border-radius: $radius;
+    //}
+
   }
-
-  &-close {
+  .hairline,
+  .hairline-top,
+  .hairline-right,
+  .hairline-bottom,
+  .hairline-left {
     position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-
-    &::before,
-    &::after {
-      content: '';
-      position: absolute;
-      height: 1px;
-      background: black;
-      width: 100%;
-      top: 50%;
-      left: 50%;
-    }
-
-    &::before {
-      transform: translate(-50%, -50%) rotate(-45deg);
-    }
-
-    &::after {
-      transform: translate(-50%, -50%) rotate(45deg);
-    }
+  }
+  .hairline-top::after {
+    content: ' ';
+    transform: scale(0.5);
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    top: -50%;
+    bottom: -50%;
+    border-top: 1px solid #ebedf0;
+  }
+  .hairline-right::after {
+    content: ' ';
+    transform: scale(0.5);
+    position: absolute;
+    left: -50%;
+    right: -50%;
+    top: -50%;
+    bottom: -50%;
+    border-right: 1px solid #ebedf0;
   }
 }
 </style>

@@ -2,7 +2,7 @@ import Home from './views/Home.vue';
 import Doc from './views/Doc.vue';
 import SwitchDoc from './components/Switch/SwitchDoc.vue';
 import ButtonDoc from './components/Button/ButtonDoc.vue';
-import DialogDoc from './components/DialogDoc.vue';
+import DialogDoc from './components/Dialog/DialogDoc.vue';
 import TabsDoc from './components/TabsDoc.vue';
 
 import {h} from 'vue';
