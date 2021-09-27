@@ -8,7 +8,7 @@ import {Button, Tabs} from "monkee-ui"
 ```
 就可以开始使用开关、按钮组件了。使用组件代码示例：
 
-```
+```html
 <template>
   <div>
     <Button>按钮</Button>
