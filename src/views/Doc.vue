@@ -31,6 +31,7 @@
             <router-link to="/doc/tabs">Tabs 标签页</router-link>
           </li>
         </ol>
+        <div class="mask" @click="onClickMask"></div>
       </aside>
       <main>
         <router-view/>
@@ -45,15 +46,29 @@ import {inject, Ref} from 'vue';
 
 export default {
   components: {Topnav},
-  setup() {
+  setup(props, context) {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
-    return {asideVisible};
+    const onClickMask = () => {
+      asideVisible!.value = false
+    };
+    return {asideVisible, onClickMask};
   }
 };
 </script>
 
 <style lang="scss" scoped>
 
+@media screen and (max-width: 500px){
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 150px;
+    width: 100%;
+    height: 100%;
+    background: fade_out(black, 0.8);
+    z-index: 10;
+  }
+}
 
 aside {
   background: white;
