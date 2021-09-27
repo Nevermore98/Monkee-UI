@@ -12,7 +12,7 @@
             <router-link to="/doc/install">安装</router-link>
           </li>
           <li>
-            <router-link to="/doc/get-started">开始使用</router-link>
+            <router-link to="/doc/get-started">快速上手</router-link>
           </li>
         </ol>
 
@@ -46,7 +46,7 @@ import {inject, Ref} from 'vue';
 
 export default {
   components: {Topnav},
-  setup(props, context) {
+  setup() {
     const asideVisible = inject<Ref<boolean>>('asideVisible');
     const onClickMask = () => {
       asideVisible!.value = false
