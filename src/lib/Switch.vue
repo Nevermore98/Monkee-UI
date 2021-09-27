@@ -2,7 +2,8 @@
   <div>
     <button class="monkee-switch"
             :class="{'monkee-checked':value}"
-            @click="toggle">
+            @click="toggle"
+            :disabled="disabled">
       <span></span>
     </button>
   </div>
@@ -12,7 +13,11 @@
 
 export default {
   props: {
-    value: Boolean
+    value: Boolean,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   setup(props, context) {
     const toggle = () => {
@@ -69,6 +74,11 @@ $circle-height: $button-height - 4px;
 
   &.monkee-checked > span {
     left: calc(100% - #{$circle-height} - 2px);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: #e8e8e8;
   }
 }
 

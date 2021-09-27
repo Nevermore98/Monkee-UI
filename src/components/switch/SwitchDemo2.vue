@@ -1,8 +1,8 @@
 <demo>
-支持 disabled
+禁用状态
 </demo>
 <template>
-  <Switch v-model:value="isOpen" disabled />
+  <Switch v-model:value="isOpen" disabled/>
 </template>
 
 <script lang="ts">

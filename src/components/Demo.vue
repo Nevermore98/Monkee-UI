@@ -5,7 +5,8 @@
       <component :is="component"/>
     </div>
     <div class="card-actions">
-      <Button size="small" @click="toggleCode">查看代码</Button>
+      <Button v-if="codeVisible" size="small" @click="toggleCode">隐藏代码</Button>
+      <Button v-else size="small" @click="toggleCode">查看代码</Button>
     </div>
     <div v-if="codeVisible" class="card-code">
         <pre class="language-html"
