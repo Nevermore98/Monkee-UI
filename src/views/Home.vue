@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss" scoped>
 $green: #02bcb0;
-$border-radius: 4px;
+$border-radius: 24px;
 $color: #007974;
 
 .topnavAndBanner {
@@ -73,9 +73,10 @@ $color: #007974;
     a {
       margin: 0 8px;
       background: #fff;
+      font-weight: bold;
       display: inline-block;
-      background: $green;
-      color: white;
+      border: 1px solid $green;
+      color: $green;
       padding: 8px 24px;
       border-radius: $border-radius;
 
